@@ -1,0 +1,128 @@
+@mixin mobile {
+    @media screen and (max-width: 800px) {
+        @content;
+    }
+}
+
+@mixin mobilexs {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 100vw;
+    @include mobile{
+        margin: 10px 0px;
+    }
+
+    @include mobilexs{
+        margin: 5px 0px;
+    }
+
+    .top{
+        display: flex;
+        width: 100%;
+        justify-content: space-evenly;
+
+        .item{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 200px;
+            font-size: 14px;
+            @include mobile{
+                font-size: 12px;
+                text-align: left;
+                gap: 5px;
+                width: 100px;
+            }
+
+            @include mobilexs{
+                font-size: 9px;
+                text-align: left;
+                gap: 3px;
+                width: 30px;
+            }
+
+            h1{
+                font-size: 18px;
+                font-weight: 500;
+                color: #555;
+                @include mobile{
+                    font-size: 15px;
+                }
+
+                @include mobilexs{
+                    font-size: 11px;
+                }
+            }
+
+            span{
+                color: gray;
+                font-size: 15px;
+                @include mobile{
+                    width: fit-content;
+                    font-size: 11px;
+                }
+
+                @include mobilexs{
+                    width: fit-content;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .bottom{
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        @include mobilexs{
+            margin-top: 5px;
+        }
+        .left{
+            display: flex;
+            align-items: center;
+
+            .logo{
+                color: blue;
+                font-weight: bold;
+                font-size: 24px;
+                @include mobile{
+                    font-size: 18px;
+                }
+
+                @include mobilexs{
+                    font-size: 12px;
+                }
+            }
+
+            .copyright{
+                margin-left: 20px;
+                font-size: 12px;
+                color: gray;
+                @include mobilexs{
+                    font-size: 9px;
+                }
+
+            }
+        }
+        .right{
+            img{
+                width: 100px;
+                object-fit: contain;
+
+                @include mobilexs{
+                    display: none;
+                }
+            }
+        }
+    }
+}

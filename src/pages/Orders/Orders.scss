@@ -1,0 +1,114 @@
+@mixin mobile {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
+.ordered {
+  display: flex;
+  flex-direction: column;
+  height: 55vh;
+
+  h1 {
+    text-align: center;
+    font-size: 21px;
+    margin-bottom: 10px;
+  }
+}
+
+.orders {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  #message {
+    margin: auto;
+    color: lightgray;
+    margin-top: 30px;
+    font-size: 30px;
+
+    @include mobile {
+      font-size: 15px;
+    }
+  }
+
+  .card {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background-color: whitesmoke;
+    padding: 10px 0px;
+    border-radius: 10px;
+
+    @include mobile {
+      padding: 3px 0;
+      height: 110px;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 50%;
+
+      @include mobile {
+        justify-content: center;
+        gap: 10px;
+      }
+
+      h2 {
+        font-weight: bold;
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+      p {
+        font-size: 13px;
+        @include mobile {
+          font-size: 11px;
+        }
+      }
+    }
+
+    .image {
+      width: 20%;
+      height: 110px;
+      overflow: hidden;
+      position: relative;
+
+      img {
+        width: 100%;
+        width: 100%;
+        object-fit: contain;
+        @include mobile{
+          height: 100px;
+        }
+      }
+    }
+
+    .total {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      @include mobile {
+        gap: 5px;
+        font-size: 14px;
+      }
+
+      span {
+        display: flex;
+        gap: 10px;
+        font-weight: bold;
+        align-items: center;
+        @include mobile {
+          gap: 5px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

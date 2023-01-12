@@ -1,0 +1,131 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+.cart {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  z-index: 999;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0px 0px 7px -4px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0px 0px 7px -4px rgba(0, 0, 0, 0.9);
+
+  @include mobile{
+    right: 0;
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    color: gray;
+    font-weight: 400;
+    font-size: 20px;
+
+    @include mobile {
+      font-size: 14px;
+      margin-bottom: 9px;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    @include mobile {
+      gap: 8px;
+      margin-bottom: 9px;
+    }
+
+    img {
+      width: 80px;
+      height: 100px;
+      object-fit: cover;
+
+      @include mobile {
+        height: 90px;
+        width: 65;
+      }
+    }
+    .details {
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 10px;
+
+        @include mobile {
+          font-size: 13px;
+          margin-bottom: 5px;
+        }
+      }
+
+      p {
+        color: gray;
+        font-size: 14px;
+        margin-bottom: 10px;
+
+        @include mobile {
+            font-size: 12px;
+            margin-bottom: 5px;
+          }
+      }
+
+      .price {
+        color: blue;
+        @include mobile {
+            font-size: 13px;
+          }
+      }
+    }
+
+    .delete {
+      color: red;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+
+  .total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+    @include mobile {
+        font-size: 13px;
+        margin-bottom: 5px;
+      }
+  }
+
+  button {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    gap: 20px;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+    margin-bottom: 10px;
+    @include mobile {
+        font-size: 11px;
+        margin-bottom: 4px;
+        padding: 5px;
+      }
+  }
+
+  .reset {
+    color: red;
+    font-size: 12px;
+    cursor: pointer;
+  }
+}

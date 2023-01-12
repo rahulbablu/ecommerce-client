@@ -1,0 +1,208 @@
+@mixin mobile{
+  @media screen and (max-width: 900px){
+    @content;
+  }
+}
+
+.navbar {
+  display: flex;
+  flex: 1;
+  height: 60px;
+
+  .wrapper {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+
+    .item {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 500;
+      color: rgb(78, 77, 77);
+    }
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 18px;
+
+      @media only screen and (max-width: 926px) {
+        .item {
+          display: none;
+        }
+      }
+
+      .logo {
+        letter-spacing: 1px;
+        color: blue;
+        font-weight: 500;
+        font-size: 18px;
+      }
+    }
+    .center {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      margin-left: 10px;
+      .inputBox {
+        display: flex;
+        align-items: center;
+        border: 1px solid blue;
+        padding: 5px;
+        border-radius: 8px;
+
+        .icon {
+          color: blue;
+        }
+        input {
+          width: 24rem;
+          border: none;
+          outline: none;
+
+          @media only screen and (max-width: 723px) {
+            width: 18em;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      flex: 1;
+      align-items: flex-end;
+      gap: 18px;
+
+      .icons {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: #777;
+        cursor: pointer;
+
+        .cartIcon {
+          display: flex;
+          position: relative;
+
+          span {
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #2879fe;
+            color: white;
+            position: absolute;
+            right: -10px;
+            top: -10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+
+  .userBox {
+    background-color: white;
+    position: absolute;
+    z-index: 999;
+    top: 60px;
+    right: 5%;
+    border-radius: 0 0 8px 8px;
+
+    .user {
+      padding: 10px;
+      h5 {
+        font-size: 15px;
+      }
+
+      p {
+        font-size: 15px;
+        padding-top: 5px;
+        cursor: pointer;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 10px;
+        border: none;
+        background-color: #2879fe;
+        color: white;
+        font-size: bold;
+        padding: 5px;
+        border-radius: 8px;
+        cursor: pointer;
+        min-width: 90px;
+      }
+    }
+  }
+
+  .mobileMenu {
+    background-color: white;
+    border-right: 1px solid whitesmoke;
+    height: 100vh;
+    width: 45%;
+    position: absolute;
+    z-index: 999999;
+    padding-left: 5px;
+
+    .menuHead{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h4 {
+        width: fit-content;
+        text-align: center;
+        padding: 25px 0px;
+        color: #2879fe;
+        font-size: 20px;
+      }
+    }
+
+    .userinfo {
+      margin-bottom: 10px;
+      p {
+        font-size: 15px;
+        border-bottom: 1px solid whitesmoke;
+        padding: 4px;
+      }
+      .user {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 5px;
+
+        h5 {
+          font-size: 15px;
+        }
+      }
+
+      .cats{
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+      }
+    }
+  }
+
+  .mobileSearch{
+    position: absolute;
+    width: 300px;
+    left: 55px;
+    top: 9px;
+    .inputBox{
+      width: 100%;
+      input{
+        height: 35px;
+        width: 100%;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}

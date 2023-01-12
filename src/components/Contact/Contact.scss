@@ -1,0 +1,66 @@
+@mixin mobile {
+    @media screen and (max-width: 1100px){
+        @content;
+    }
+}
+
+.contact{
+    background-color: blue;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    @include mobile{
+        padding: 5px;
+    }
+    
+    .wrapper{
+        width: 85%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include mobile{
+            width: 100%;
+        }
+        span{
+            @include mobile{
+                display: none;
+            }
+        }
+
+        input{
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            @include mobile{
+                padding: 4px;
+                height: 11px;
+
+                &::placeholder{
+                    font-size: 11px;
+                }
+            }
+        }
+
+        button{
+            background: black;
+            color: white;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+            border: none;
+            @include mobile{
+                padding: 4px;
+                font-size: 10px;
+            }
+        }
+
+        .icons{
+            display: flex;
+            gap: 10px;
+            @include mobile{
+                gap: 5px;
+            }
+        }
+    }
+
+}

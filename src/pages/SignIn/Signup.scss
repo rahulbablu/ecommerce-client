@@ -1,0 +1,97 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+.formContainer {
+  background-color: rgb(76, 176, 201);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .formWrapper {
+    background-color: whitesmoke;
+    padding: 20px 60px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-right: 60px;
+    position: absolute;
+    margin: 20px;
+    border: 1px solid gray;
+
+    @include mobile {
+      padding: 20px 28px !important;
+    }
+
+    .logo {
+      color: blue;
+      font-weight: bold;
+      font-size: 1.5em;
+      padding: 0;
+    }
+
+    .title {
+      color: rgb(73, 73, 73);
+      font-weight: 500;
+      font-size: 0.8em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 250px;
+      @include mobile {
+        min-width: 180px;
+      }
+
+      input {
+        padding: 0.5em;
+        outline-color: blue;
+        outline-width: 1px;
+
+        &::placeholder {
+          color: gray;
+        }
+      }
+
+      button {
+        background-color: blue;
+        cursor: pointer;
+        border: none;
+        color: white;
+        padding: 8px;
+        font-weight: bold;
+      }
+
+      label {
+        font-size: 12px;
+        color: gray;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+      }
+    }
+
+    p {
+      color: black;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+  }
+}

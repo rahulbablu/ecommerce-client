@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1730b3c8.css",
+    "main.js": "/static/js/main.f92acd30.js",
+    "static/media/season.jpg": "/static/media/season.6a67772c21f736626fb0.jpg",
+    "static/media/banner3.jpg": "/static/media/banner3.484e83e9627ee797bb86.jpg",
+    "static/media/banner2.jpg": "/static/media/banner2.dac01a892c6448a6403b.jpg",
+    "static/media/banner1.jpg": "/static/media/banner1.4abae854a4e7a013a710.jpg",
+    "static/media/sale.jpg": "/static/media/sale.be8052184fcbabaf86a3.jpg",
+    "static/media/men.jpg": "/static/media/men.01e6b515a9def1eff2e4.jpg",
+    "static/media/accessories.jpg": "/static/media/accessories.14ee2c2b8a6480d2ea5c.jpg",
+    "static/media/footwear.jpg": "/static/media/footwear.43e00cf3dce0f2f411e7.jpg",
+    "static/media/women.jpg": "/static/media/women.8951de636597fd1d2de2.jpg",
+    "static/media/upi.png": "/static/media/upi.ce896eee8e98adfd4d1a.png",
+    "static/media/shopping.svg": "/static/media/shopping.a2dc99eb282a3c14ad687abfee03ac8c.svg",
+    "index.html": "/index.html",
+    "main.1730b3c8.css.map": "/static/css/main.1730b3c8.css.map",
+    "main.f92acd30.js.map": "/static/js/main.f92acd30.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1730b3c8.css",
+    "static/js/main.f92acd30.js"
+  ]
+}
