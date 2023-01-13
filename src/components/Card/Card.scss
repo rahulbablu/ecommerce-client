@@ -113,6 +113,10 @@
             right: 2%;
             z-index: 5;
             cursor: pointer;
+
+            @include mobilexs{
+                font-size: 15px;
+            }
         }
 
         #notFavor{
@@ -122,6 +126,10 @@
             right: 2%;
             z-index: 5;
             cursor: pointer;
+
+            @include mobilexs{
+                font-size: 15px;
+            }
         }
         
     }

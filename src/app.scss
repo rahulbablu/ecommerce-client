@@ -1,6 +1,26 @@
 .app{
+
+    @mixin mobilexs {
+        @media screen and (max-width: 480px) {
+          @content;
+        }
+      }
+
     .link{
         color: inherit;
         text-decoration: none;
     }
+
+    .mySwiper{
+        @include mobilexs{
+            height: 265px;
+        }
+    }
+
+    .swiper-pagination-bullet {
+        @include mobilexs{
+        width: 4px;
+        height: 4px;
+        }
+   }
 }

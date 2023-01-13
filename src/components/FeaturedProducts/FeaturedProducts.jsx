@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./FeaturedProducts.scss";
 import Card from "../Card/Card";
 import useFetch from "../../hooks/useFetch";
@@ -8,11 +8,20 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
+import { useState } from "react";
 
 const FeaturedProducts = ({ type }) => {
   const { data, loading, error } = useFetch(
     `/products?populate=*&[filters][type][$eq]=${type}`
   );
+
+  const [medium, setMedium] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth < 1100) {
+      setMedium(true);
+    }
+  }, []);
 
   return (
     <div className="featuredProducts">
@@ -24,15 +33,13 @@ const FeaturedProducts = ({ type }) => {
       </div>
       <div className="bottom">
         <Swiper
-          slidesPerView={4}
-          // slidesPerGroup={4}
-          spaceBetween={30}
+          slidesPerView={medium ? 3 : 4}
+          spaceBetween={medium ? 15 : 30}
           loop={true}
-          // loopFillGroupWithBlank={true}
           pagination={{
             clickable: true,
           }}
-          navigation={true}
+          navigation={medium ? false : true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
