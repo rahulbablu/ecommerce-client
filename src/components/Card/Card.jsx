@@ -22,12 +22,8 @@ const Card = ({ item }) => {
         addToWishlist({
           id: item.id,
           title: item.attributes.title,
-          img:
-            process.env.REACT_APP_UPLOAD_URL +
-            item.attributes.img.data.attributes.url,
-          img2:
-            process.env.REACT_APP_UPLOAD_URL +
-            item.attributes.img2.data.attributes.url,
+          img: item.attributes.img.data.attributes.url,
+          img2: item.attributes.img2.data.attributes.url,
           isNew: item.attributes.isNew,
           price: item.attributes.price,
         })

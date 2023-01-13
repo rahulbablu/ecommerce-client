@@ -33,12 +33,8 @@ const Product = () => {
         addToWishlist({
           id: data.id,
           title: data.attributes.title,
-          img:
-            process.env.REACT_APP_UPLOAD_URL +
-            data.attributes.img.data.attributes.url,
-          img2:
-            process.env.REACT_APP_UPLOAD_URL +
-            data.attributes.img2.data.attributes.url,
+          img:data.attributes.img.data.attributes.url,
+          img2: data.attributes.img2.data.attributes.url,
           isNew: data.attributes.isNew,
           price: data.attributes.price,
         })
