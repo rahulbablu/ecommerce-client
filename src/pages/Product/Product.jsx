@@ -33,7 +33,7 @@ const Product = () => {
         addToWishlist({
           id: data.id,
           title: data.attributes.title,
-          img:data.attributes.img.data.attributes.url,
+          img: data.attributes.img.data.attributes.url,
           img2: data.attributes.img2.data.attributes.url,
           isNew: data.attributes.isNew,
           price: data.attributes.price,
@@ -45,13 +45,11 @@ const Product = () => {
   };
 
   useEffect(() => {
-      var unsub = async () => {
-        await setDoc(doc(db, "wishlists", user[0].uid), { wishlist });
-      };
-      if(user.length > 0) unsub()
-  }, [dispatch, wishlist, user.uid,user]);
-
-
+    var unsub = async () => {
+      await setDoc(doc(db, "wishlists", user[0].uid), { wishlist });
+    };
+    if (user.length > 0) unsub();
+  }, [dispatch, wishlist, user.uid, user]);
 
   useEffect(() => {
     const favourited = wishlist.find((i) => i.id === +id);
@@ -73,28 +71,19 @@ const Product = () => {
           <div className="left">
             <div className="images">
               <img
-                src={
-                  process.env.REACT_APP_UPLOAD_URL +
-                  data?.attributes?.img?.data?.attributes?.url
-                }
+                src={data?.attributes?.img?.data?.attributes?.url}
                 alt=""
                 onClick={(e) => setSelectedImg("img")}
               />
               <img
-                src={
-                  process.env.REACT_APP_UPLOAD_URL +
-                  data?.attributes?.img2?.data?.attributes?.url
-                }
+                src={data?.attributes?.img2?.data?.attributes?.url}
                 alt=""
                 onClick={(e) => setSelectedImg("img2")}
               />
             </div>
             <div className="mainImg">
               <img
-                src={
-                  process.env.REACT_APP_UPLOAD_URL +
-                  data?.attributes?.[selectedImg].data?.attributes?.url
-                }
+                src={data?.attributes?.[selectedImg].data?.attributes?.url}
                 alt=""
               />
             </div>
@@ -122,9 +111,7 @@ const Product = () => {
                   title: data.attributes.title,
                   price: data.attributes.price,
                   desc: data.attributes.desc,
-                  img:
-                    process.env.REACT_APP_UPLOAD_URL +
-                    data.attributes.img.data.attributes.url,
+                  img: data.attributes.img.data.attributes.url,
                   quantity,
                 })
               )
@@ -141,16 +128,11 @@ const Product = () => {
           </div>
           <div className="info">
             <h4>Product Details</h4>
-            <h5>CAMPUS SUTRA</h5>
+            <h5>{data?.attributes.title}</h5>
             <ul>
-              <li>Winterwear</li>
-              <li>
-                Wear this stylish Suede jacket from the house of Campus Sutra.
-                The Suede jacket is comfortable to wear as the fabrics are light
-                on the skin.
-              </li>
+              <li>{data?.attributes.desc}</li>
               <li>Regular Fit</li>
-              <li>Package contains : 1 jacket</li>
+              <li>Package contains : 1 item</li>
             </ul>
           </div>
         </div>

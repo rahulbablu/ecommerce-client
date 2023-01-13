@@ -17,9 +17,7 @@ const Cart = () => {
 
   const products = useSelector((state) => state.cart.products);
   const user = useSelector((s) => s.auth.userInfo);
-
-  console.log(products);
-
+  
   const totalPrice = () => {
     let total = 0;
     products?.forEach((item) => {

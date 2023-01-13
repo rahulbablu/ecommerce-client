@@ -22,8 +22,6 @@ const Orders = () => {
     if(user.length > 0) unsub();
   }, [user]);
 
-  console.log(orders);
-
   return (
     <>
       <Navbar />

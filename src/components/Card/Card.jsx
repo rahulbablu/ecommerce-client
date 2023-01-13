@@ -34,11 +34,11 @@ const Card = ({ item }) => {
   };
 
   useEffect(() => {
-      var unsub = async () => {
-        await setDoc(doc(db, "wishlists", user[0].uid), { wishlist });
-      };
-    if(user.length > 0) unsub();
-  }, [dispatch, wishlist,user]);
+    var unsub = async () => {
+      await setDoc(doc(db, "wishlists", user[0].uid), { wishlist });
+    };
+    if (user.length > 0) unsub();
+  }, [dispatch, wishlist, user]);
 
   useEffect(() => {
     const favourited = wishlist?.find((i) => i.id === item.id);
@@ -54,18 +54,12 @@ const Card = ({ item }) => {
       <div className="image">
         {item?.attributes.isNew && <span>Newly Added</span>}
         <img
-          src={
-            process.env.REACT_APP_UPLOAD_URL +
-            item.attributes.img.data.attributes.url
-          }
+          src={item.attributes.img.data.attributes.url}
           alt="mainImg"
           className="mainImg"
         />
         <img
-          src={
-            process.env.REACT_APP_UPLOAD_URL +
-            item.attributes.img2.data.attributes.url
-          }
+          src={item.attributes.img2.data.attributes.url}
           alt="secondImg"
           className="secondImg"
         />
@@ -83,7 +77,10 @@ const Card = ({ item }) => {
       <div className="prices">
         <h3>₹{item.attributes.oldPrice}</h3>
         <h3>₹{item?.attributes.price}</h3>
-        <h3>({Math.ceil((item.attributes.price/item.attributes.oldPrice)*100)})% OFF</h3>
+        <h3>
+          ({Math.ceil((item.attributes.price / item.attributes.oldPrice) * 100)}
+          )% OFF
+        </h3>
       </div>
     </div>
   );

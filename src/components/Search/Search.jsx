@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 import './Search.scss';
 
@@ -8,6 +9,7 @@ const Search = ({searchValue}) => {
     const { data } = useFetch(`/products?populate=*`);
 
   const [searched, setSearched] = useState([]);
+  const navigate = useNavigate();
 
     useEffect(() => {
         const debouncing = setTimeout(() => {
@@ -22,12 +24,11 @@ const Search = ({searchValue}) => {
         return () => clearInterval(debouncing);
     }, [searchValue, data]);
 
-
   return (
     <div className='search'>
       {searched.map(item => (
-        <div className="searchItem" key={item.id}>
-          <img src={process.env.REACT_APP_UPLOAD_URL+item.attributes.img?.data.attributes.url} alt='' />
+        <div className="searchItem" key={item.id} onClick={() => navigate(`/product/${item.id}`)}>
+          <img src={item.attributes.img?.data.attributes.formats.thumbnail.url} alt='' />
           <div className="info">
             <h5>{item.attributes.title}</h5>
             <h6>in {item.attributes.sub_categories.data[0].attributes.title}</h6>

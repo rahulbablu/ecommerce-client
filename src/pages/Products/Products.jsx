@@ -34,8 +34,6 @@ const Products = () => {
     const value = e.target.value;
     const exists = e.target.checked;
 
-    console.log(selectedSubCats, value);
-
     setSelectedSubCats(
       exists
         ? [...selectedSubCats, value]

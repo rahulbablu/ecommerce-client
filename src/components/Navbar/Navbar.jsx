@@ -56,15 +56,7 @@ const Navbar = () => {
     dispatch(resetWishlist());
   }
 
-  const handleBlur = () => {
-    setSearchValue('');
-    setOpenSearch(false);
-  }
-
   const activeUser = useSelector((state) => state.auth.userInfo);
-
-
-  console.log(activeUser)
 
   return (
     <div className="navbar">
@@ -120,7 +112,6 @@ const Navbar = () => {
                 value={searchValue}
                 placeholder="Search Products.."
                 onChange={(e) => setSearchValue(e.target.value)}
-                onBlur={() => setSearchValue("")}
               />
             </span>
           </div>
@@ -251,7 +242,6 @@ const Navbar = () => {
               value={searchValue}
               placeholder="Search Products.."
               onChange={(e) => setSearchValue(e.target.value)}
-              onBlur={handleBlur}
             />
           </span>
         </div>
